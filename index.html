@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rustic & FabuLace</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body onload="wait()"> <!-- Runs a javascript function on page load -->
+	<script>
+		var waitTime;
+
+		function wait() { //Waits for 1 second until the scroll function is run
+		    waitTime = setTimeout(scroll, 1000);
+		}
+
+		function scroll(div){ //Automatically scrolls down to the second section of the webpage over 5 seconds
+			$('html, body').animate({
+				scrollTop: $("#2").offset().top
+			},5000);
+		}
+		
+		function openModal() { //Opens a lightbox for an image when it is clicked on to enlarge it
+            document.getElementById('myModal').style.display = "block";
+        }
+        
+        function closeModal() { //Closes a lightbox for an image when the exit button is clicked on
+            document.getElementById('myModal').style.display = "none";
+        }
+        
+        function plusSlides(n) { //Makes sure that the correct image is showing when a user changes the image they are looking at in the lightbox
+            showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) { //Makes sure that the correct image is showing when a lightbox is opened
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) { //Sets up a lightbox so that a user can navigate through the images in the gallery in a larger view in a slideshow format
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+          
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+          
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+          
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+          
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+	</script>
+
+	<div class="container1" id="1">
+		<div class = "logo">
+			<div><img src="img/logo-min.png"></div>
+		</div>
+	</div>
+
+	<div class="container2" id="2">
+		<div class = "background">
+			<h2>What do we do?</h2>
+			<div class="intro">
+				<div><h3>At Rustic & FabuLace we create personalised and bespoke artificial flower arrangements, place cards and picture frames.</h3></div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "container3" id="3">
+		<div class = "background">
+			<h2>Gallery</h2>
+			<div class="flex-container">
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/1-min-2.jpg" onclick="openModal();currentSlide(1)" class="image"> <!-- Opens a larger version of the image in a lightbox -->
+						<div class="overlay" onclick="openModal();currentSlide(1)">Click here to view the image</div> <!-- Shows this message with a black background when a user hovers over an image -->
+					</div>
+				</div>
+
+				<div class="filterDiv placement">
+					<div class="img-container">
+						<img src="img/2-min-2.jpg" onclick="openModal();currentSlide(2)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(2)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv frames">
+					<div class="img-container">
+						<img src="img/3-min-2.jpg" onclick="openModal();currentSlide(3)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(3)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv frames">
+					<div class="img-container">
+						<img src="img/4-min-2.jpg" onclick="openModal();currentSlide(4)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(4)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/5-min-2.jpg" onclick="openModal();currentSlide(5)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(5)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/6-min-2.jpg" onclick="openModal();currentSlide(6)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(6)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/7-min-2.jpg" onclick="openModal();currentSlide(7)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(7)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/8-min-2.jpg" onclick="openModal();currentSlide(8)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(8)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/9-min-2.jpg" onclick="openModal();currentSlide(9)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(9)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/10-min-2.jpg" onclick="openModal();currentSlide(10)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(10)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/11-min-2.jpg" onclick="openModal();currentSlide(11)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(11)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/12-min-2.jpg" onclick="openModal();currentSlide(12)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(12)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/13-min-2.jpg" onclick="openModal();currentSlide(13)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(13)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/14-min-2.jpg" onclick="openModal();currentSlide(14)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(14)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/15-min-2.jpg" onclick="openModal();currentSlide(15)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(15)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/16-min-2.jpg" onclick="openModal();currentSlide(16)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(16)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/17-min-2.jpg" onclick="openModal();currentSlide(17)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(17)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/18-min-2.jpg" onclick="openModal();currentSlide(18)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(18)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/20-min-2.jpg" onclick="openModal();currentSlide(19)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(19)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/21-min-2.jpg" onclick="openModal();currentSlide(20)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(20)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/22-min-2.jpg" onclick="openModal();currentSlide(21)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(21)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/23-min-2.jpg" onclick="openModal();currentSlide(22)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(22)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/24-min-2.jpg" onclick="openModal();currentSlide(23)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(23)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/25-min-2.jpg" onclick="openModal();currentSlide(24)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(24)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/26-min-2.jpg" onclick="openModal();currentSlide(25)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(25)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/30-min-2.jpg" onclick="openModal();currentSlide(26)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(26)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/31-min-2.jpg" onclick="openModal();currentSlide(27)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(27)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/32-min-2.jpg" onclick="openModal();currentSlide(28)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(28)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/33-min-2.jpg" onclick="openModal();currentSlide(29)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(29)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/34-min-2.jpg" onclick="openModal();currentSlide(30)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(30)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/35-min-2.jpg" onclick="openModal();currentSlide(31)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(31)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/36-min-2.jpg" onclick="openModal();currentSlide(32)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(32)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/37-min-2.jpg" onclick="openModal();currentSlide(33)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(33)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/38-min-2.jpg" onclick="openModal();currentSlide(34)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(34)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/40-min-2.jpg" onclick="openModal();currentSlide(35)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(35)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/27-min-2.jpg" onclick="openModal();currentSlide(36)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(36)">Click here to view the image</div>
+					</div>
+				</div>
+
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/28-min-2.jpg" onclick="openModal();currentSlide(37)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(37)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/29-min-2.jpg" onclick="openModal();currentSlide(38)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(38)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/39-min-2.jpg" onclick="openModal();currentSlide(39)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(39)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/41-min-2.jpg" onclick="openModal();currentSlide(40)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(40)">Click here to view the image</div>
+					</div>
+				</div>
+				
+				<div class="filterDiv flower">
+					<div class="img-container">
+						<img src="img/42-min-2.jpg" onclick="openModal();currentSlide(41)" class="image">
+						<div class="overlay" onclick="openModal();currentSlide(41)">Click here to view the image</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="myModal" class="modal">
+	    <span class="close cursor" onclick="closeModal()">&times;</span> <!-- Creates a cross in the top right of the lightbox so the user can close the lightbox -->
+	    
+	    <div class="modal-content">
+	        <div class="mySlides"> <!-- Makes sure that the user sees the correct image when they click on it to view the larger version of it -->
+                <img src="img/1-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/2-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/3-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/4-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/5-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/6-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/7-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/8-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/9-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/10-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/11-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/12-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/13-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/14-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/15-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/16-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/17-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/18-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/20-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/21-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/22-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/23-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/24-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/25-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/26-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/30-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/31-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/32-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/33-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/34-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/35-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/36-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/37-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/38-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/40-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/27-min.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+                <img src="img/28-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/29-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/39-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/41-min.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+                <img src="img/42-min.jpg" style="width:100%">
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Goes to the image before the current image in the gallery when viewing it in the lightbox -->
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> <!-- Goes to the image after the current image in the gallery when viewing it in the lightbox -->
+	    </div>
+	</div>
+
+	<div class="container4" id="4">
+		<div class="background">
+			<h2>Contact</h2>
+			<div class = "form">
+				<div><form action="contact.php" method="post" class="cf"> <!-- Creates a contact form which notifies the owner of this website by email about what a user is enquiring about. The user will be entering their name, email, subject and enquiry -->
+		            <div>
+		                <input type="text" name="yourname" id="input-name" placeholder="Name" required>
+
+		                <input type="text" name="subject" id="input-subject" placeholder="Subject" required>
+
+		                <input type="email" name="email" id="input-email" placeholder="Email address" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+		            </div>
+
+		            <div>
+		                <textarea name="comments" type="text" id="input-message" placeholder="Enquiry" required></textarea>
+		            </div>
+
+					<div class="g-recaptcha" data-sitekey="6LdPK3oUAAAAAIpyZx8yNDx60lpWwThy-RbIH5qw" required></div> <!-- This creates a google recaptcha checkbox to prevent spamming -->
+
+		            <input type="submit" value="Submit" id="input-submit">
+	        	</form></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
